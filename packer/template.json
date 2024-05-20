@@ -4,7 +4,6 @@
       "boot_wait": "2s",
       "disk_size": 20480,
       "guest_os_type": "darwin12-64",
-      "iso_checksum_type": "md5",
       "iso_checksum": "checksum_from_iso",
       "iso_url": "file:///path/to/InstallESD_from_prepare_iso.dmg",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
