@@ -5,6 +5,14 @@
 This repository contains [Packer](https://packer.io/) templates written in legacy JSON for creating
 macOS Vagrant boxes.
 
+Install Packer plugins:
+...
+packer plugins install  github.com/hashicorp/openstack
+packer plugins install  github.com/hashicorp/qemu
+packer plugins install  github.com/hashicorp/virtualbox
+packer plugins install  github.com/hashicorp/vagrant
+packer plugins install  github.com/hashicorp/vmware
+
 You must supply your own install media and build these boxes on your own using
 these templates. No pre-built boxes are publicly available.
 
