@@ -97,6 +97,22 @@ Fusion:
 
     $ packer build -only=vmware-iso -var-file=macos1011.json macos.json
 
+Or more detailed by setting variables:
+```
+PACKER_LOG_PATH="./packer.log" \
+PACKER_LOG=1 packer build \
+-only=vmware-iso \
+-var-file=macos109.json \
+-var 'install_vagrant_keys=true' \
+-var 'autologin=true' \
+-var 'update=true' \
+-var 'install_xcode_cli_tools=true' \
+-var 'ssh_username=vagrant' \
+-var 'ssh_password=vagrant' \
+-var 'iso_checksum=none' \
+macos.json
+```
+
 The boxcutter templates currently support the following desktop virtualization strings:
 
 * `parallels-iso` - [Parallels](http://www.parallels.com/products/desktop/whats-new/) desktop virtualization (Requires the Pro Edition - Desktop edition won't work)
