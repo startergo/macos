@@ -10,10 +10,12 @@
       "output_directory": "output-{{ user `vm_name` }}-vmware-iso",
       "shutdown_command": "echo '{{ user `ssh_username` }}'|sudo -S shutdown -h now",
       "skip_compaction": true,
+      "communicator": "ssh",
       "ssh_password": "{{ user `ssh_password` }}",
       "ssh_port": 22,
       "ssh_timeout": "10000s",
       "ssh_username": "{{ user `ssh_username` }}",
+      "ssh_key_exchange_algorithms": ["curve25519-sha256@libssh.org", "ecdh-sha2-nistp256", "ecdh-sha2-nistp384", "ecdh-sha2-nistp521", "diffie-hellman-group14-sha1", "diffie-hellman-group1-sha1"],
       "ssh_wait_timeout": "10000s",
       "tools_upload_flavor": "darwin",
       "type": "vmware-iso",
@@ -43,9 +45,11 @@
       "output_directory": "output-{{ user `vm_name` }}-virtualbox-iso",
       "post_shutdown_delay": "1m",
       "shutdown_command": "echo '{{ user `ssh_username` }}'|sudo -S shutdown -h now",
+      "communicator": "ssh",
       "ssh_password": "{{ user `ssh_password` }}",
       "ssh_port": 22,
       "ssh_username": "{{ user `ssh_username` }}",
+      "ssh_key_exchange_algorithms": ["curve25519-sha256@libssh.org", "ecdh-sha2-nistp256", "ecdh-sha2-nistp384", "ecdh-sha2-nistp521", "diffie-hellman-group14-sha1", "diffie-hellman-group1-sha1"],
       "ssh_wait_timeout": "10000s",
       "type": "virtualbox-iso",
       "vboxmanage": [
@@ -84,9 +88,11 @@
         [ "set", "{{.Name}}", "--shf-host", "off" ]
       ],
       "shutdown_command": "echo '{{ user `ssh_username` }}'|sudo -S shutdown -h now",
+      "communicator": "ssh",
       "ssh_password": "{{ user `ssh_password` }}",
       "ssh_port": 22,
       "ssh_username": "{{ user `ssh_username` }}",
+      "ssh_key_exchange_algorithms": ["curve25519-sha256@libssh.org", "ecdh-sha2-nistp256", "ecdh-sha2-nistp384", "ecdh-sha2-nistp521", "diffie-hellman-group14-sha1", "diffie-hellman-group1-sha1"],
       "ssh_wait_timeout": "10000s",
       "type": "parallels-iso",
       "vm_name": "{{ user `vm_name` }}"
@@ -115,7 +121,7 @@
         "SSH_USERNAME={{ user `ssh_username` }}",
         "SSH_PASSWORD={{ user `ssh_password` }}"
       ],
-      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E -S bash '{{ .Path }}'",
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E -S bash -vx '{{ .Path }}'",
       "expect_disconnect": true,
       "scripts": [
         "script/vagrant.sh",
@@ -141,7 +147,7 @@
         "SSH_USERNAME={{ user `ssh_username` }}",
         "SSH_PASSWORD={{ user `ssh_password` }}"
       ],
-      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E -S bash '{{ .Path }}'",
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E -S bash -vx '{{ .Path }}'",
       "expect_disconnect": true,
       "scripts": [
         "script/minimize.sh"
@@ -156,7 +162,7 @@
     "disk_size": "65536",
     "install_vagrant_keys": "true",
     "install_xcode_cli_tools": "true",
-    "iso_url": "dmg/OSX_InstallESD_10.9.5_13F34.dmg",
+    "iso_url": "dmg/OSX_InstallESD_10.11_15A284.dmg",
     "memory": "2048",
     "parallels_guest_os_type": "win-8",
     "ssh_password": "vagrant",
@@ -164,8 +170,8 @@
     "update": "true",
     "vagrantfile_template": "",
     "version": "0.1.0",
-    "vm_name": "macos109",
-    "virtualbox_guest_os_type": "MacOS109_64",
-    "vmware_guest_os_type": "darwin13-64"
+    "vm_name": "macos1011",
+    "virtualbox_guest_os_type": "MacOS1011_64",
+    "vmware_guest_os_type": "darwin15-64"
   }
 }
