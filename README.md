@@ -11,6 +11,7 @@ packer plugins install  github.com/hashicorp/qemu
 packer plugins install  github.com/hashicorp/virtualbox
 packer plugins install  github.com/hashicorp/vagrant
 packer plugins install  github.com/hashicorp/vmware
+packer plugins install github.com/veertuinc/veertu-anka
 vagrant plugin install vagrant-vmware-desktop
 ```
 Install [Vagrant Vmware utility](https://developer.hashicorp.com/vagrant/install/vmware)
