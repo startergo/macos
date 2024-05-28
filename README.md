@@ -115,6 +115,7 @@ PACKER_LOG=1 packer build \
 -var 'iso_checksum=none' \
 macos.json
 ```
+For `macOS Sierra` use versions prior to 10.12.4 like [this one](https://archive.org/details/macOS_Sierra_10.12.1). See [here](https://github.com/timsutton/osx-vm-templates/blob/d3de634fc09aed981e8ec53ba302163c4624f039/README.md?plain=1#L33) for more details.
 
 The boxcutter templates currently support the following desktop virtualization strings:
 
